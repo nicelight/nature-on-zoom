@@ -12,6 +12,9 @@
 - SSL/TLS: Cloudflare (TLS 1.3)
 - Web Server: nginx (рекомендуется)
 
+### Source Control
+- Repo: [nicelight/nature-on-zoom](https://github.com/nicelight/nature-on-zoom)
+
 ## Технологический стек
 
 ### Frontend
