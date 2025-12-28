@@ -1,0 +1,162 @@
+openapi: 3.0.3
+info:
+  title: Nature on Zoom API
+  description: |
+    API для имитации стримингового сервиса.
+    Используется для создания правдоподобного трафика для DPI-анализаторов.
+  version: 1.0.0
+  contact:
+    name: Nature on Zoom Team
+
+servers:
+  - url: https://{domain}/api
+    description: Production server
+    variables:
+      domain:
+        default: natureonzoom.win
+
+paths:
+  /stream/preview/{streamId}:
+    get:
+      summary: Получить метаданные стрима
+      description: |
+        Возвращает метаинформацию о видеопотоке.
+        Вызывается при наведении на фрейм для имитации стримингового трафика.
+      operationId: getStreamPreview
+      tags:
+        - Streams
+      parameters:
+        - name: streamId
+          in: path
+          required: true
+          description: Идентификатор стрима
+          schema:
+            type: string
+            enum:
+              - eagle
+              - owl
+              - hummingbird
+              - osprey
+              - falcon
+              - heron
+              - penguin
+              - flamingo
+      responses:
+        '200':
+          description: Метаданные стрима
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StreamPreview'
+              example:
+                id: eagle
+                title: Bald Eagle Nest
+                status: live
+                viewers: 142
+                quality: 1080p
+                bitrate: 4500kbps
+                thumbnail: /assets/images/eagle-thumb.jpg
+                startedAt: "2025-12-28T10:00:00Z"
+        '404':
+          description: Стрим не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /health:
+    get:
+      summary: Проверка состояния сервиса
+      operationId: healthCheck
+      tags:
+        - System
+      responses:
+        '200':
+          description: Сервис работает
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+
+components:
+  schemas:
+    StreamPreview:
+      type: object
+      required:
+        - id
+        - title
+        - status
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор стрима
+          example: eagle
+        title:
+          type: string
+          description: Название стрима
+          example: Bald Eagle Nest
+        status:
+          type: string
+          enum: [live, offline, scheduled]
+          description: Статус стрима
+          example: live
+        viewers:
+          type: integer
+          description: Количество зрителей (случайное число)
+          minimum: 0
+          example: 142
+        quality:
+          type: string
+          description: Качество видео
+          example: 1080p
+        bitrate:
+          type: string
+          description: Битрейт потока
+          example: 4500kbps
+        thumbnail:
+          type: string
+          format: uri-reference
+          description: Путь к превью
+          example: /assets/images/eagle-thumb.jpg
+        startedAt:
+          type: string
+          format: date-time
+          description: Время начала стрима
+          example: "2025-12-28T10:00:00Z"
+
+    HealthStatus:
+      type: object
+      required:
+        - status
+        - timestamp
+      properties:
+        status:
+          type: string
+          enum: [ok, degraded]
+          example: ok
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-12-28T12:00:00Z"
+        version:
+          type: string
+          example: "1.0.0"
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          example: STREAM_NOT_FOUND
+        message:
+          type: string
+          example: Stream with id 'unknown' not found
+
+tags:
+  - name: Streams
+    description: Операции с видеопотоками
+  - name: System
+    description: Системные эндпоинты

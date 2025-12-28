@@ -1,0 +1,109 @@
+# INDEX — Индекс артефактов проекта
+# Обновлено: 2025-12-29
+
+project: nature-on-zoom
+version: 1.0.0
+status: live_production
+
+artifacts:
+  memory:
+    - path: .memory/MISSION.md
+      updated: 2025-12-28
+      status: current
+    - path: .memory/CONTEXT.md
+      updated: 2025-12-28
+      status: current
+    - path: .memory/TASKS.md
+      updated: 2025-12-29
+      status: current
+    - path: .memory/PROGRESS.md
+      updated: 2025-12-29
+      status: current
+    - path: .memory/ASKS.md
+      updated: 2025-12-28
+      status: current
+    - path: .memory/DECISIONS.md
+      updated: 2025-12-28
+      status: current
+    - path: .memory/WORKLOG.md
+      updated: 2025-12-29
+      status: current
+    - path: .memory/USECASES.md
+      updated: 2025-12-28
+      status: current
+
+  spec:
+    - path: spec/docs/SRS.md
+      updated: 2025-12-28
+      status: final
+    - path: spec/docs/SDD.md
+      updated: 2025-12-28
+      status: final
+    - path: spec/docs/VPN-runbook.md
+      updated: 2025-12-29
+      status: final
+    - path: spec/docs/DEPLOY-RUNBOOK.md
+      updated: 2025-12-29
+      status: final
+    - path: spec/contracts/api.yaml
+      updated: 2025-12-28
+      status: final
+    - path: spec/contracts/websocket.md
+      updated: 2025-12-28
+      status: final
+    - path: spec/contracts/VERSION.json
+      updated: 2025-12-28
+      status: current
+    - path: spec/adr/ADR-0001.md
+      updated: 2025-12-28
+      status: accepted
+
+  code:
+    frontend:
+      - path: index.html
+        status: complete
+      - path: charge.html
+        status: complete
+      - path: css/variables.css
+        status: complete
+      - path: css/reset.css
+        status: complete
+      - path: css/base.css
+        status: complete
+      - path: css/animations.css
+        status: complete
+      - path: css/components.css
+        status: complete
+      - path: css/style.css
+        status: complete
+      - path: js/config.js
+        status: complete
+      - path: js/websocket.js
+        status: complete
+      - path: js/oauth.js
+        status: complete
+      - path: js/main.js
+        status: complete
+      - path: js/payment.js
+        status: complete
+      - path: assets/svg/favicon.svg
+        status: complete
+      - path: assets/images/* (6 jpg files)
+        status: complete
+
+    backend:
+      - path: server/package.json
+        status: complete
+      - path: server/index.js
+        status: complete
+      - path: server/ws/heartbeat.js
+        status: complete
+      - path: server/routes/api.js
+        status: complete
+
+statistics:
+  tasks_total: 91
+  tasks_done: 91
+  progress_percent: 100
+  ready_for_production: true
+  status: LIVE

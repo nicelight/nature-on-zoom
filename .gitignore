@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build/Deploy scripts
+server/node_modules/
+
+# OS/IDEs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Images/Large Assets (optional, but keep thumbnails)
+# assets/images/*.png (we already compressed them to jpg)
+
+# Memory bank (keeping it for the assistant, but maybe you want to ignore it?)
+# .memory/ 
+
+# Logs
+logs/
+*.log

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Watch live bird nest webcams from around the world. Experience nature up close with our premium streaming service featuring eagles, owls, hummingbirds, and more.">
+  <meta name="keywords" content="bird watching, live webcam, nature stream, eagle nest, owl cam, wildlife camera">
+  <meta name="author" content="Nature on Zoom">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nature on Zoom — Live Bird Nest Webcams">
+  <meta property="og:description" content="Watch live bird nest webcams from around the world. Premium wildlife streaming service.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://natureonzoom.win">
+  <meta property="og:image" content="https://natureonzoom.win/assets/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nature on Zoom — Live Bird Nest Webcams">
+  <meta name="twitter:description" content="Watch live bird nest webcams from around the world.">
+  
+  <title>Nature on Zoom — Live Bird Nest Webcams</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="container header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="logo" aria-label="Nature on Zoom Home">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" fill="#7CB690" opacity="0.2"/>
+            <circle cx="20" cy="20" r="14" fill="#7CB690" opacity="0.4"/>
+            <path d="M20 10C20 10 14 16 14 22C14 25.3137 16.6863 28 20 28C23.3137 28 26 25.3137 26 22C26 16 20 10 20 10Z" fill="#5A9A6E"/>
+            <circle cx="18" cy="20" r="2" fill="white"/>
+            <circle cx="22" cy="20" r="2" fill="white"/>
+            <path d="M18 24C18 24 19 25 20 25C21 25 22 24 22 24" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Nature on Zoom</span>
+        </a>
+        
+        <!-- Navigation -->
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html" class="nav-link active" aria-current="page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+            <span>Watch</span>
+          </a>
+          <a href="charge.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+              <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+            <span>Charge</span>
+          </a>
+          <a href="index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>Check</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+      <div class="container-content">
+        <!-- Page Title -->
+        <div class="page-title">
+          <h1>Live Bird Nest Webcams</h1>
+          <p>Experience nature up close — watch wildlife from around the world</p>
+        </div>
+
+        <!-- Streams List -->
+        <div class="streams-list" id="streams-list">
+          <!-- Streams will be rendered by JavaScript -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2024 Nature on Zoom. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- OAuth Modal -->
+  <div class="modal-overlay" id="oauth-modal">
+    <div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="modal-header">
+        <!-- Google Logo -->
+        <svg class="modal-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+        <h2 class="modal-title" id="modal-title">Sign in with Google</h2>
+        <p class="modal-subtitle">to continue to Nature on Zoom</p>
+      </div>
+      
+      <form id="oauth-form">
+        <div class="form-group">
+          <label class="form-label" for="oauth-email">Email</label>
+          <input type="email" class="form-input" id="oauth-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-large" style="width: 100%; margin-top: var(--space-4);">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+            <polyline points="10 17 15 12 10 7"/>
+            <line x1="15" y1="12" x2="3" y2="12"/>
+          </svg>
+          Continue with Google
+        </button>
+      </form>
+      
+      <div class="divider">or</div>
+      
+      <p class="text-center text-sm text-secondary">
+        By continuing, you agree to our<br>
+        <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/websocket.js"></script>
+  <script src="js/oauth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

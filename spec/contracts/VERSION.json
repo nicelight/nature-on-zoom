@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "releaseDate": "2025-12-28",
+  "contracts": {
+    "api": {
+      "version": "1.0.0",
+      "file": "api.yaml",
+      "breaking": false
+    },
+    "websocket": {
+      "version": "1.0.0",
+      "file": "websocket.md",
+      "breaking": false
+    }
+  },
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2025-12-28",
+      "changes": [
+        "Initial contract definitions",
+        "REST API: /api/stream/preview/{id}, /api/health",
+        "WebSocket: /ws/heartbeat with ping/pong protocol"
+      ]
+    }
+  ]
+}
